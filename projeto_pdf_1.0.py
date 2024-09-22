@@ -83,9 +83,9 @@ def process_pdf(input_pdf, output_pdf, logo_path, logo_x, logo_y, text_replaceme
 
 
 # Exemplo de uso
-input_file = r"pdf" #CAMINHO DO PDF DE ENTRADA
-output_file = r".pdf" #CAMINHO PARA O PDF DE SÁIDA ONDE VÃO SER SALVO OS EDITADOS
-logo_image = r"PNG OU JPG" #NOVA IMAGEM DO PDF
+input_file = r"c:.pdf" #CAMINHO DO PDF DE ENTRADA
+output_file = r"c:.pdf" #CAMINHO PARA O PDF DE SÁIDA ONDE VÃO SER SALVO OS EDITADOS
+logo_image = r"c:logo nova.jpg" #NOVA IMAGEM DO PDF
 logo_x_position = 190 #ESSAS POSIÇÕES PODEM SER AUTERADAS CONFORTE NECESSIDADE 
 logo_y_position = -10
 
@@ -99,4 +99,4 @@ text_replacements = [
 process_pdf(input_file, output_file, logo_image,
             logo_x_position, logo_y_position, text_replacements)
 
-print("Pdfs Editados com Sucesso!!")
+print("Pdfs Editadoss com Sucesso!!")

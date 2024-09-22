@@ -1,4 +1,3 @@
-#ESSE CODIGO TA REMOVENDO AS IMAGENS.
 import fitz  # PyMuPDF
 
 def remove_images_from_pdf(input_pdf, output_pdf):
@@ -16,10 +15,12 @@ def remove_images_from_pdf(input_pdf, output_pdf):
         # Remover imagens
         for img_index, img in enumerate(image_list):
             xref = img[0]  # Obter xref da imagem
+            # Verifica se a imagem pode ser removida
             try:
-                # Verifica se a imagem pode ser removida
-                page.delete_image(xref)  # Remover a imagem
-                print(f"Imagem com xref {xref} removida da página {page_num + 1}.")
+                if page.delete_image(xref):  # Tenta remover a imagem
+                    print(f"Imagem com xref {xref} removida da página {page_num + 1}.")
+                else:
+                    print(f"xref {xref} não é uma imagem válida ou já foi removida.")
             except Exception as e:
                 print(f"Erro ao remover a imagem com xref {xref}: {e}")
 
@@ -29,7 +30,10 @@ def remove_images_from_pdf(input_pdf, output_pdf):
     print(f"PDF salvo em: {output_pdf}")
 
 # Exemplo de uso
-input_file = r"pdf"  # Substitua pelo caminho do seu PDF
-output_file = r"pdf"  # Caminho para salvar o novo PDF
+input_file = r"c:.pdf"
+output_file = r"c:.pdf"
 
+# Chamada para remover imagens
 remove_images_from_pdf(input_file, output_file)
+
+print("PDF Editados com Sucesso!!")
